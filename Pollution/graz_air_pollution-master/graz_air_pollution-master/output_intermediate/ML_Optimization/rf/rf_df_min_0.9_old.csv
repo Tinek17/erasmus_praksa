@@ -1,0 +1,15 @@
+,RMSE,MAE,RMSE_val_0.9,MAE_val_0.9
+D_NO2,rf_4_50_5_auto_True_42,rf_4_50_5_auto_True_42,9.525,7.294
+D_PM10K,rf_6_300_None_sqrt_True_0,rf_6_300_None_sqrt_True_0,11.263,8.106
+N_NO2,rf_1_50_None_auto_True_42,rf_4_50_None_auto_True_42,6.421,5.027
+N_O3,rf_2_150_None_auto_True_42,rf_2_150_None_auto_True_42,9.508,6.988
+N_Ox,rf_base_200_None_auto_True_42,rf_base_200_None_auto_True_42,6.258,4.915
+N_PM10K,rf_6_80_None_log2_False_0,rf_base_50_None_sqrt_False_0,7.845,5.479
+O_NO2,rf_6_200_5_auto_True_0,rf_1_150_5_auto_True_42,6.961,5.441
+O_PM10K,rf_1_100_None_sqrt_True_0,rf_5_200_5_sqrt_True_42,15.566,10.048
+S_NO2,rf_6_50_5_auto_True_0,rf_6_50_5_auto_True_0,6.696,5.368
+S_O3,rf_2_50_None_sqrt_False_0,rf_2_300_None_auto_True_42,5.926,4.791
+S_Ox,rf_5_50_3_sqrt_True_0,rf_5_50_3_sqrt_True_0,11.098,9.497
+S_PM10K,rf_4_100_None_sqrt_True_0,rf_4_100_None_sqrt_True_0,8.807,7.019
+W_NO2,rf_1_50_None_auto_True_42,rf_4_50_None_auto_True_42,5.655,4.547
+W_PM10K,rf_5_100_None_sqrt_False_0,rf_5_50_None_sqrt_False_42,8.097,5.659

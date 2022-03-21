@@ -1,0 +1,15 @@
+,RMSE_base,rf_s1,xgb_s1,ex_s1,pp_s1,rf1_better?,xgb_s1_better?,ex_s1_better?,pp_s1_better?,s1_better?,best
+D_NO2,7.43,8.94,9.15,9.26,10.54,False,False,False,False,False,8.94
+D_PM10K,9.04,11.08,11.18,11.49,12.48,False,False,False,False,False,11.08
+N_NO2,5.3,6.17,6.16,6.87,8.72,False,False,False,False,False,6.16
+N_O3,6.76,9.3,9.08,10.16,10.17,False,False,False,False,False,9.08
+N_Ox,7.19,5.87,5.76,6.11,6.65,True,True,True,True,True,5.76
+N_PM10K,7.09,6.32,6.88,7.04,9.94,True,True,True,False,True,6.32
+O_NO2,7.63,6.92,6.86,7.36,8.4,True,True,True,False,True,6.86
+O_PM10K,13.44,14.31,14.7,14.41,15.73,False,False,False,False,False,14.31
+S_NO2,7.26,6.12,5.76,6.33,5.54,True,True,True,True,True,5.54
+S_O3,6.43,5.56,5.91,5.9,6.56,True,True,True,False,True,5.56
+S_Ox,11.92,10.63,11.75,11.88,5.92,True,True,True,True,True,5.92
+S_PM10K,8.52,8.63,9.2,9.17,10.32,False,False,False,False,False,8.63
+W_NO2,4.74,5.6,4.92,5.64,7.73,False,False,False,False,False,4.92
+W_PM10K,8.11,7.45,7.92,7.74,10.43,True,True,True,False,True,7.45
