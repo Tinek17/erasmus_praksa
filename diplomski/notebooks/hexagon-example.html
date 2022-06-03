@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.5.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-map-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#map {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#deckgl-overlay {
+  z-index: 2;
+  background: none;
+}
+
+#deck-map-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 47.0707, "longitude": 15.4395, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 10}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": [{"N_PM10K_mean": 33.487500000000004, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 29.391666666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 7.3625, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 20.25, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 36.19583333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 35.18333333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 48.12083333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 42.30833333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 26.558333333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 22.9125, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 35.96666666666667, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 48.72083333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 50.208333333333336, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 65.325, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 40.1875, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 37.69583333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 25.90833333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 23.179166666666664, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 33.28333333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 35.520833333333336, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 40.05833333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 39.48333333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 53.86666666666667, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 45.1, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 52.69583333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 28.0875, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 18.141666666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 20.445833333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 33.583333333333336, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 23.6625, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 16.791666666666668, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 13.133333333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 9.604166666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 5.754166666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 13.1, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 26.366666666666664, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 23.59166666666667, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 29.27916666666667, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 17.349999999999998, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 10.316666666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.295833333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 24.070833333333336, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 19.183333333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 16.05, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 19.495833333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 28.430434782608696, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 19.075, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 15.741666666666667, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 15.733333333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.608333333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 17.675, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 18.654166666666665, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.204347826086956, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 19.39583333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.491666666666667, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 16.254166666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 7.879166666666666, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 16.0125, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 13.875, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 10.904761904761903, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 8.570833333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 8.700000000000001, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 16.466666666666665, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.820833333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 11.0875, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 13.591666666666669, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 21.04583333333333, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 14.85, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 17.370833333333334, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 18.2125, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.970833333333331, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 12.783333333333331, "N_lat": 47.09437, "N_lon": 15.415122}, {"N_PM10K_mean": 14.033333333333331, "N_lat": 47.09437, "N_lon": 15.415122}], "elevationRange": [0, 2000], "elevationScale": 5, "extruded": true, "getPosition": "@@=[N_lon, N_lat]", "id": "c9a42f77-46d6-4ed8-a55c-f052367425fb", "pickable": true}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
+    const tooltip = true;
+    const customLibraries = null;
+
+    const deckInstance = createDeck({
+                  container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>
